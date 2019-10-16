@@ -1,0 +1,116 @@
+*{margin: 0; padding: 0;}
+
+body{
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+}
+
+#canvas{
+    position: relative;
+    width: 100%; height: 300px;
+    -webkit-perspective: 1500;
+
+    margin-top: 50px;
+    
+}
+
+#merry{
+    position: absolute;
+    left: 50%; top: 30px;
+    transform-style: preserve-3d;
+
+    animation-name: rint;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.face{
+    position: absolute;
+    margin-left: -120px;
+
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.cell{
+    width: 370px; height: 250px;
+    margin-bottom: 5px;
+    background: url("http://placehold.it/260x200");
+    background-size: 100% 100%;
+}
+
+.cell img{
+    width: 370px; height: 250px;
+}
+
+.face:nth-child(1) { transform: rotateY(0deg) translateZ(-750px);}
+.face:nth-child(2) { transform: rotateY(30deg) translateZ(-750px);}
+.face:nth-child(3) { transform: rotateY(60deg) translateZ(-750px);}
+.face:nth-child(4) { transform: rotateY(90deg) translateZ(-750px);}
+.face:nth-child(5) { transform: rotateY(120deg) translateZ(-750px);}
+.face:nth-child(6) { transform: rotateY(150deg) translateZ(-750px);}
+.face:nth-child(7) { transform: rotateY(180deg) translateZ(-750px);}
+.face:nth-child(8) { transform: rotateY(210deg) translateZ(-750px);}
+.face:nth-child(9) { transform: rotateY(240deg) translateZ(-750px);}
+.face:nth-child(10) { transform: rotateY(270deg) translateZ(-750px);}
+.face:nth-child(11) { transform: rotateY(300deg) translateZ(-750px);}
+.face:nth-child(12) { transform: rotateY(330deg) translateZ(-750px);}
+
+.cell:hover{
+    transform: scale(1.2) translateZ(50px);
+}
+
+@keyframes rint{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+/* 드래그 방지 클래스 */
+.no-drag {
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    user-select:none;
+}
+
+
+
+
+/* modal 관련*/
+#overlay { 
+    width:100%; 
+    height:100%; 
+    background:rgba(0,0,0,0.4);
+    position:fixed;
+    top:0; left:0; 
+    z-index:1; 
+    visibility:hidden; 
+    opacity:0;   
+    transition:all 0.5s ease;
+}
+
+.modal {
+    position: absolute;
+    background:#f5f5f5;
+}
+
+
+.close {
+    position:absolute; 
+
+    top: -17px; right: 3px; 
+    font-size: 56px;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: rgb(94,94,94); 
+    cursor:pointer; 
+}

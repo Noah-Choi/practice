@@ -1,0 +1,43 @@
+*{margin: 0; padding: 0;}
+
+#slider{
+    overflow: hidden;
+    margin: 100px auto;
+    position: relative;
+}
+
+#leftBtn, #rightBtn{
+    top: 300px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #aaa;
+}
+
+#leftBtn:hover, #rightBtn:hover{
+    color: rgb(94,94,94);
+}
+
+#leftBtn{
+    position: absolute;
+    left: 5px;
+}
+
+#rightBtn{
+    position: absolute;
+    right: 5px;
+}
+
+#radio{
+    position: absolute;
+    bottom: 10px;
+}
+
+/* 드래그 방지 클래스 */
+.no-drag {
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    user-select:none;
+}
+
